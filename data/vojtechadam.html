@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remake Project</title>
+    <link rel="stylesheet" href="./css/vojtechadam.css">
+    <script src="https://kit.fontawesome.com/be1f410c2f.js" crossorigin="anonymous"></script>
+
+    <script>
+        function movePage(currentId, newId) {
+            let mainView = document.getElementById("mainView");
+            let newSection = document.getElementById(newId).cloneNode(true);
+
+            // Filter default
+            if (currentId == -1) {
+                mainView.appendChild(newSection);
+                newSection.classList.add('active');
+                return;
+            }
+
+            let currentSection = document.getElementById(currentId);
+
+            // If the new section is to the left of the current section, slide in from the left
+            let slideRight = true;
+            if (newId < currentId) {
+                slideRight = false;
+                newSection.classList.add('slide-left-enter');
+                currentSection.classList.add('slide-right-exit');
+            } else {
+                newSection.classList.add('slide-right-enter');
+                currentSection.classList.add('slide-left-exit');
+            }
+
+            // Add the new section to the main view
+            mainView.appendChild(newSection);
+            newSection.classList.add('active');
+
+            // Trigger a reflow to force the browser to repaint the new section
+            // with the appropriate slide-in animation class applied
+            newSection.getBoundingClientRect();
+            currentSection.getBoundingClientRect();
+
+            // Remove the slide-in animation class to trigger the slide-in animation
+            if (slideRight) {
+                newSection.classList.remove('slide-right-enter');
+                newSection.classList.add('slide-right-enter-active');
+                currentSection.classList.remove('slide-left-exit');
+                currentSection.classList.add('slide-left-exit-active');
+            } else {
+                newSection.classList.remove('slide-left-enter');
+                newSection.classList.add('slide-left-enter-active');
+                currentSection.classList.remove('slide-right-exit');
+                currentSection.classList.add('slide-right-exit-active');
+            }
+
+            // When the animation is complete, remove the old section from the DOM
+            setTimeout(function() {
+                mainView.removeChild(currentSection);
+                currentSection.classList.remove('active');
+                if (slideRight) {
+                    newSection.classList.remove('slide-right-enter-active');
+                    currentSection.classList.remove('slide-left-exit');
+                    currentSection.classList.remove('slide-left-exit-active');
+                } else {
+                    newSection.classList.remove('slide-left-enter-active');
+                    currentSection.classList.remove('slide-right-exit');
+                    currentSection.classList.remove('slide-right-exit-active');
+                }
+            }, 500);
+        }
+    </script>
+</head>
+
+<body>
+    <section id="mainView"></section>
+    <section id="1">
+        <div class="wrapper">
+            <div class="content">
+                <h1 class="nice-effect">Remake Project</h1>
+                <h2>The Conversation</h2>
+            </div>
+            <div class="nav single">
+                <button class="btn next" onclick="movePage(1,2)">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="bottom">
+                <em>Vojtěch Adam, David Jurosz, Daniel Alker</em>
+            </div>
+        </div>
+    </section>
+    <section id="2">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Na úvod</h2>
+                <p>Autor, kterého jsme si vybrali, byl Henri Matisse. Na výběru jeho obrazu jsme se jednohlasně shodli už ve třídě při rozdělování autorů. Z výběru obrazu i samo vyplynulo, kdo bude mít jakou pozici při vytváření fotky. V týmu jsme byli tři
+                    a bylo nám jasné, že jeden musí fotit, proto jsme hledali obraz, na kterém budou 2 lidé.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(2,1);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(2,3);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="3">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Výbava</h2>
+                <p>Vojta má kvalitní fotoaparát a zkušenosti s focením, proto pro něj byl úkol jasný. Fotit. Na Dana a Davida zbyla role před fotoaparátem. David měl možnost sehnat černý hábit, proto na něj připadla role sedící ženy. A Dan měl za úkol sehnat
+                    aspoň jeden kousek modrobílého oblečení.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(3,2);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(3,4);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="4">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Kde?</h2>
+                <p>„Kde budeme fotit?“, to byla druhá otázka, která zazněla při přípravě fotky. Davida napadlo, že bychom mohli projekt vyfotit na zřícenině hradu Vikštejn u Vítkova. Je to sice zřícenina, ale náznak oken tam určitě bude a příroda za okny
+                    taky.
+                </p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(4,3);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(4,5);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="5">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Komplikace</h2>
+                <p>Nastala první komplikace. David je celý březen na projektu Erasmus+ v Polsku. Proto jsme měli zhruba týden na vyfocení projektu. Nechtěli jsme to prodlužovat a domluvili jsme se, že se sejdeme na Vikštejně na začátku jarních prázdnin.
+                    Na messengeru jsme vytvořili skupinu, kde jsme komunikovali. Nejtěžší na přípravě bylo najít vhodné autobusové spoje, abychom na sebe na Vikštejně dlouho nečekali.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(5,4);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(5,6);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="6">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Komplikace s autobusy</h2>
+                <p>Spojení jsme našli a nezbývalo nic jiného než vyrazit. Každý z jiného města. Dan z Malých Hoštic, Vojta z Hradce nad Moravicí a David z Vítkova. David a Vojta na místo dorazili a čekali na Dana, který napsal, že dojede později, protože
+                    jeho první autobus měl zpoždění a druhý autobus mu tím pádem ujel. A tady nastala komplikace. Autobusy z Opavy do Vítkova jedou více směry a ne každá linka jede přes Vikštejn. To Dan nevěděl a nasedl do autobusu, který jede sice do
+                    Vítkova, ale ne přes Vikštejn.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(6,5);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(6,7);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="7">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Co z toho vyplývá?</h2>
+                <p>Než by Dan došel na Vikštejn z Vítkova, další autobus by z Vikštejnu už nejel a my bychom se nedostali domů. Proto musel dojít Vojta a David do Vítkova a hodně improvizovat, protože plán vyfotit projekt na Vikštejně nám nevyšel.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(7,6);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(7,8);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="8">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Jak to vyřešit?</h2>
+                <p>Jakmile jsme došli do Vítkova, čekal na nás Dan a mohli jsme společně přemýšlet, kde projekt vyfotíme. Po cestě jsme míjeli Vítkovskou nemocnici, a protože nemocnice ve Vítkově je původní zámek, mysleli jsme si, že tam půjde něco vymyslet.</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(8,7);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(8,9);">Další <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="9">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Je to dobré místo?</h2>
+                <p>Nemýlili jsme se! Hned u vjezdu je budova bývalé vrátnice, u které je také vstupní veranda. Budova byla trochu rozbořená, ale veranda nás zaujala natolik, že jsme se rozhodli pořídit zde finální fotografii.
+                </p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(9,8);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(9,10);">Další <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="10">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Čas fotit!</h2>
+                <p>Trochu jsme si lámali hlavu, kde seženeme židli. Tento problém jsme vyřešili rychle. Protože na původním obrazu má židle stejnou barvu, jako stěna a je skoro neviditelná, na naší remake fotografii je židle také neviditelná. Smetli jsme
+                    pavučiny a fotka byla na světě!</p>
+            </div>
+            <div class="nav">
+                <button class="btn previous" onclick="movePage(10,9);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+                <button class="btn next" onclick="movePage(10,11);">Další <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <section id="11">
+        <div class="wrapper">
+            <div class="content">
+                <h2>Finální obraz</h2>
+            </div>
+            <div class="imgs">
+                <img src="img/vojtechadam01.jpg" alt="Původní obraz">
+                <img src="img/vojtechadam02.jpg" alt="Naše verze">
+            </div>
+            <div class="nav single">
+                <button class="btn previous" onclick="movePage(11,10);"><i class="fa-solid fa-arrow-left"></i>
+                    Předchozí</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        movePage(-1, 1);
+    });
+</script>
+
+</html>
