@@ -1,0 +1,104 @@
+:root {
+    --background: floralwhite;
+    --btn: navajowhite;
+    --animate-speed: 1s;
+}
+
+body {
+    font-family: Ebrima;
+    line-height: 1.4;
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--background);
+}
+
+.page1 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.page1 h1 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+    margin: 1rem;
+    padding: 1.5rem 10rem;
+    border: navajowhite 10px solid;
+}
+
+.page1 p {
+    font-size: 1.5rem;
+}
+
+.page2 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    text-align: center;
+}
+
+.page2 h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin: 1rem;
+    padding: 10px;
+    border: navajowhite 5px solid;
+}
+
+.img {
+    display: block;
+}
+
+.page2 li {
+    text-align: left;
+    margin: 1rem 25%;
+    font-size: x-large;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    margin: 1rem;
+    font-size: 1rem;
+    transition: all 0.5s ease-in;
+    background-color: var(--btn);
+    color: black;
+    border-radius: 50px;
+}
+
+.btn:hover {
+    background-color: sandybrown;
+}
+
+
+
+/* animace */
+#page1 h1{
+    transform: translateY(-1200px);
+    animation: heading var(--animate-speed) forwards ease-in;
+}
+
+@keyframes heading {
+    to {
+        transform: translateY(0);
+    }
+}
+
+#page1 p {
+    transform: translateX(-1800px);
+    animation: text var(--animate-speed) forwards ease-in 1s;
+}
+
+@keyFrames text {
+    to {
+        transform: translateX(0);
+    }
+}
