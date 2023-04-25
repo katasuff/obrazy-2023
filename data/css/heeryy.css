@@ -8,14 +8,8 @@
     color: black;
 }
 
-.slide {
-    width: 100vw;
-    height: 100vh;
-}
 
-img {
-    padding: 20px;
-}
+/* IDS */
 
 #center1 {
     text-align: center;
@@ -47,28 +41,6 @@ img {
     padding: 35vh;
 }
 
-.button {
-    width: 100px;
-    height: 30px;
-    cursor: pointer;
-    background-color: #B3B0A8;
-    border: solid 0 black;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    transition: all 1s;
-    margin: 1rem;
-}
-
-.button:hover {
-    border-radius: 0;
-    background-color: #C6C5BE;
-}
-
-.link {
-    text-decoration: none;
-    color: black;
-}
-
 #slide-1 {
     background-color: #6D6B5F;
 }
@@ -93,6 +65,40 @@ img {
     background-color: #A09E92;
 }
 
+#odsazeni {
+    padding-top: 5vh;
+}
+
+/* Classes */
+
+.button {
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #B3B0A8;
+    border: solid 0 black;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: all 1s;
+    margin: 1rem;
+}
+
+.button:hover {
+    border-radius: 0;
+    background-color: #C6C5BE;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Elementy */
 
 h1 {
     font-size: 4rem;
@@ -138,8 +144,8 @@ h6 {
     font-size: 4rem;
 }
 
-#odsazeni {
-    padding-top: 5vh;
+img {
+    padding: 20px;
 }
 
 
