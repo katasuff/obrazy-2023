@@ -1,0 +1,98 @@
+:root{
+    --style1-color: #0b0c10;
+    --style2-color: #66fcf1;
+    --animate-speed: 1s;
+}
+body{
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.4;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+img{
+    height: 300px;
+}
+.style-1{
+    background: var(--style1-color);
+    color: var(--style2-color);
+}
+.style-1 h1{
+    padding-bottom: 1rem;
+    border-bottom: 10px solid var(--style2-color);
+}
+.style-2 h1{
+    padding-bottom: 1rem;
+    border-bottom: 10px solid var(--style1-color);
+}
+.style-2{
+    background: var(--style2-color);
+    color: var(--style1-color);
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+}
+.page h1{
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 1rem;
+}
+.page p{
+    font-size: 1.3rem;
+}
+.style-1 .btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: var(--style2-color);
+    text-decoration: none;
+    border-top: 5px solid var(--style2-color);
+    border-bottom: 5px solid var(--style2-color);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in;
+}
+.style-1 .btn:hover{
+    background: #45a29e;
+    color: var(--style1-color);
+}
+.style-2 .btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: var(--style1-color);
+    text-decoration: none;
+    border-top: 5px solid var(--style1-color);
+    border-bottom: 5px solid var(--style1-color);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    transition: all 0.5s ease-in;
+}
+.style-2 .btn:hover{
+    background: #1f2833;
+    color: var(--style2-color);
+}
+#page-1 h1{
+    transform: translateY(-1200px);
+    animation: heading var(--animate-speed) forwards ease-in;
+}
+@keyframes heading {
+    to{
+        transform:translateY(0);
+    }
+}
+
+#page-1 p{
+    transform: translateX(-1800px);
+    animation: text var(--animate-speed) forwards ease-in 1s;
+}
+@keyframes text {
+    to {
+        transform: translateX(0);
+    }
+}
