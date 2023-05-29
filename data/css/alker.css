@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.slideBack {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgb(0, 27, 137);
+    text-decoration: none;
+    color: white;
+}
+
+.nextSlide {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: orange;
+    text-decoration: none;
+    color: white;
+}
+
+
+#snimek1 {
+    height: 100vh;
+    background-color: skyblue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#nadpis1 {
+    margin-top: 0;
+}
+
+#snimek2 {
+    height: 100vh;
+    background-color: #ff3232e0;
+}
+#snimek3 {
+    height: 100vh;
+    background-color: #00940f;
+}
