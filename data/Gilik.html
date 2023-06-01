@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Prezentace</title>
+</head>
+<body>
+
+<section id="page-1" class="page">
+    <h1>Daniel Gilík - Lenny - Šnajdl - obrazy</h1>
+    <div>
+        <a href="#page-2" class="btn">Další</a>
+    </div>
+</section>
+
+<section id="page-2" class="page">
+<h1>René Magritte</h1>
+<p>Zde můžete vidět obraz od René Magritte, který jsme se rozhodli napodobit <br> jakožto součásít REMAKE projektu.</p>
+    <img src="img/rene-origo.jpg" alt="">
+<div>
+    <a href="#page-1" class="btn-dark"
+    >Předchozí <i class="fas fa-arrow-circle-up"></i>
+    </a>
+
+    <a href="#page-3" class="btn"
+    >Další <i class="fas fa-arrow-circle-down"></i>
+    </a>
+</div>
+</section>
+
+<section id="page-3" class="page">
+    <p>Na dalších kartách můžete vidět průběh výroby naší napodoběniny.</p>
+    <br>
+    <p>Zde byl přidán list k jablku</p>
+    <img src="img/add-list.jpg" alt="">
+    <div>
+        <a href="#page-2" class="btn-dark">Předchozí <i class="fas fa-arrow-circle-up"></i></a>
+
+        <a href="#page-4" class="btn">Další <i class="fas fa-arrow-circle-down"></i></a>
+    </div>
+</section>
+
+<section id="page-4" class="page">
+    <p>Zde byla přidána tužka </p>
+    <img src="img/add-pen.jpg" alt="">
+    <div>
+        <a href="#page-3" class="btn-dark"
+        >Předchozí <i class="fas fa-arrow-circle-up"></i>
+        </a>
+
+        <a href="#page-5" class="btn"
+        >Další <i class="fas fa-arrow-circle-down"></i>
+        </a>
+    </div>
+</section>
+
+<section id="page-5" class="page">
+    <p>Zde byla tužka vražena do jablka a následovně držena v mých ústech než se zhotovila fotografie.</p>
+    <img src="img/add-final.jpg" alt="">
+    <div>
+        <a href="#page-4" class="btn-dark"
+        >Předchozí <i class="fas fa-arrow-circle-up"></i>
+        </a>
+
+        <a href="#page-6" class="btn"
+        >Další <i class="fas fa-arrow-circle-down"></i>
+        </a>
+    </div>
+</section>
+
+<section id="page-6" class="page">
+    <p>Zde je naše verze REMAKE Projektu.</p>
+
+        <img src="img/dan-origo.jpg" alt="">
+
+
+    <div>
+        <a href="#page-5" class="btn-dark"
+        >Předchozí <i class="fas fa-arrow-circle-up"></i>
+        </a>
+    </div>
+</section>
+
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    </script>
+
+    <script>
+       $(".btn, .btn-dark").on("click", function (event) {
+           if (this.hash !== "") {
+               event.preventDefault();
+               const hash = this.hash;
+               $("html, body").animate({ scrollTop: $(hash).offset().top}, 800)
+           }
+       })
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/erik.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Remake obrazy</title>
+</head>
+<body>
+<section id="page-1" class="page page-licha">
+    <h1>Prière de toucher</h1>
+    <h1>Šimon Večerek | Erik Stanovský | David Štencel</h1>
+    <div>
+        <a href="#page-2" class="btn btn-dark">Další</a>
+    </div>
+</section>
+<section id="page-2" class="page page-suda">
+    <h1>Prière de toucher (Prosím dotkněte se)</h1>
+    <p>Jde o ženské prso z pěnové gumy vložené do kousku černého sametu na obalu surrealistického katalogu z roku 1947
+    </p>
+    <img src="img/duchamp.jpg" alt="">
+    <div>
+        <a href="#page-1" class="btn">Předchozí <i class="fas fa-arrow-circle-up"></i></a>
+        <a href="#page-3" class="btn">Další <i class="fas fa-arrow-circle-down"></i></a>
+    </div>
+</section>
+<section id="page-3" class="page page-licha">
+    <h1>Prière de nourriture (Modlitba za jídlo)</h1>
+    <p>Jde o palačinku s marmeládou uprostřed, položenou na černém kusu látky, na části kartónové krabice z roku 2023
+    </p>
+    <img src="img/duchamp_1.jpg" alt="">
+    <div>
+        <a href="#page-2" class="btn btn-dark">Předchozí <i class="fas fa-arrow-circle-up"></i></a>
+        <a href="#page-4" class="btn btn-dark">Další <i class="fas fa-arrow-circle-down"></i></a>
+    </div>
+</section>
+<section id="page-4" class="page page-suda">
+    <h1>Postup práce</h1>
+    <p><i class="fa-regular fa-circle-dot"></i> Původně jsme plánovali zpracovat jiné dílo, ale shodli jsme se, že věsit lopatu ze stropu nemusí být zrovna
+        jednoduché, tak jsme si vybrali něco, na co máme prostředky.
+    </p> <br>
+    <p><i class="fa-regular fa-circle-dot"></i> David chtěl prso vytisknout 3D tiskem a poté ho namalovat, ale to se nám nechtělo, tak jsme použili palačinku,
+        protože vypadá texturou podobně jako prso, které chceme imitovat.
+    </p><br>
+    <p><i class="fa-regular fa-circle-dot"></i> David přinesl krabici, Šimon látku a Erik udělal palačinku a přinesl marmeládu (za 40 Kč).
+    </p><br>
+    <p><i class="fa-regular fa-circle-dot"></i> David s Erikem vypracovali veledílo a Šimon udělal prezentaci.
+    </p>
+    <div>
+        <a href="#page-3" class="btn">Předchozí <i class="fas fa-arrow-circle-up"></i></a>
+        <a href="#page-5" class="btn">Další <i class="fas fa-arrow-circle-down"></i></a>
+    </div>
+</section>
+<section id="page-5" class="page page-licha">
+    <h1>KONEC</h1>
+
+    <div>
+        <a href="#page-4" class="btn btn-dark">Předchozí <i class="fas fa-arrow-circle-up"></i></a>
+        <a href="#page-1" class=" btn btn-dark">Zpět na začátek</a>
+    </div>
+</section>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(".btn").on("click", function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            const hash = this.hash;
+            $("html, body").animate({scrollTop: $(hash).offset().top}, 800)
+        }
+    })
+</script>
+</body>
+</html>
